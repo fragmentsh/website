@@ -1,0 +1,83 @@
+---
+import { fragmentBrand } from "../brand/fragment";
+import BackgroundGrid from "../components/BackgroundGrid.astro";
+import CTA from "../components/CTA.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Section from "../components/Section.astro";
+import ShardMotif from "../components/ShardMotif.astro";
+import Layout from "../layouts/Layout.astro";
+import "../styles/global.css";
+
+const nav = [
+  { href: "#portfolio", label: "portfolio" },
+];
+
+const portfolio = [
+  {
+    index: "01",
+    name: "shard labs.",
+    description:
+      "shard labs builds focused experiments at the edge of blockchain, AI, automation, and technical infrastructure.",
+    href: "https://shard-labs.xyz",
+    label: "visit shard labs.",
+  },
+  {
+    index: "02",
+    name: "café faïence",
+    description: "A ceramic painting studio, clay modeling classes, and coffee shop in Vincennes.",
+    href: "https://www.cafe-faience.com/",
+    label: "visit café faïence",
+  },
+];
+---
+
+<Layout
+  title="fragment. | quiet capital"
+  description="fragment is a small investment firm backing focused companies with long-term intent."
+  themeClass={fragmentBrand.themeClass}
+>
+  <div class="main-shell">
+    <BackgroundGrid />
+    <ShardMotif variant="calm" />
+    <Header logoPath={fragmentBrand.logoPath} brandName={fragmentBrand.name} nav={nav} contactHref="#contact" />
+    <main>
+      <Hero
+        headline="Quiet capital."
+        copy="fragment is a small investment firm backing focused companies with long-term intent."
+        primaryLabel="View portfolio"
+        primaryHref="#portfolio"
+        secondaryLabel="Contact"
+        secondaryHref={`mailto:${fragmentBrand.contactEmail}`}
+      />
+      <Section id="portfolio" label="portfolio" heading="Companies within fragment.">
+        <div class="portfolio-list">
+          {
+            portfolio.map((company) => (
+              <article class="portfolio-card">
+                <div class="portfolio-index">{company.index}</div>
+                <div class="portfolio-body">
+                  <h3>{company.name}</h3>
+                  <p>{company.description}</p>
+                </div>
+                <a href={company.href} aria-label={`Visit ${company.name}`}>
+                  {company.label}
+                </a>
+              </article>
+            ))
+          }
+        </div>
+      </Section>
+      <CTA email={fragmentBrand.contactEmail} />
+    </main>
+    <Footer
+      logoPath={fragmentBrand.logoPath}
+      brandName={fragmentBrand.name}
+      links={[
+        { href: "#portfolio", label: "portfolio" },
+        { href: "#contact", label: "contact" },
+      ]}
+    />
+  </div>
+</Layout>
