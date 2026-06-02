@@ -5,18 +5,36 @@ Standalone static Astro site for `fragment.`.
 ## Local Development
 
 ```sh
-pnpm install
-pnpm dev
+bun install
+bun run dev
 ```
 
 ## Checks And Build
 
 ```sh
-pnpm check
-pnpm build
+bun run check
+bun run build
 ```
 
 The static output is generated in `dist/`.
+
+## Pre-Commit
+
+This repo includes `.pre-commit-config.yaml` with:
+
+- standard file hygiene checks
+- `actionlint` for GitHub Actions syntax and semantics
+- `zizmor` for GitHub Actions security analysis
+
+Install and run locally:
+
+```sh
+pipx install pre-commit
+pre-commit install
+pre-commit run --all-files
+```
+
+The `Checks` GitHub Actions workflow also runs pre-commit, `bun run check`, and `bun run build` on pushes to `main` and pull requests.
 
 ## Copy And Brand Settings
 
