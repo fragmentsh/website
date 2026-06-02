@@ -25,6 +25,8 @@ This repo includes `.pre-commit-config.yaml` with:
 - standard file hygiene checks
 - `actionlint` for GitHub Actions syntax and semantics
 - `zizmor` for GitHub Actions security analysis
+- Renovate config validation
+- Mergify config validation
 
 Install and run locally:
 
@@ -35,6 +37,10 @@ pre-commit run --all-files
 ```
 
 The `Checks` GitHub Actions workflow also runs pre-commit, `bun run check`, and `bun run build` on pushes to `main` and pull requests.
+
+## Dependency Updates
+
+This repo includes `.github/renovate.json` for Renovate Bot. It tracks Bun dependencies, GitHub Actions, pre-commit hooks, and mise-managed tools.
 
 ## Copy And Brand Settings
 
