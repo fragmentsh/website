@@ -8,8 +8,8 @@
   overflow: clip;
 }
 
-.main-shell :global(.hero h1) {
-  font-size: clamp(2.85rem, 7vw, 6.2rem);
+.main-shell .hero h1 {
+  font-size: clamp(3.6rem, 7.2vw, 6.4rem);
 }
 
 #portfolio {
