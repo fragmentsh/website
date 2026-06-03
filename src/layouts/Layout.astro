@@ -8,6 +8,7 @@ interface Props {
 }
 
 const { title, description, themeClass } = Astro.props;
+const enableGoogleAnalytics = import.meta.env.PROD;
 ---
 
 <!doctype html>
@@ -19,6 +20,25 @@ const { title, description, themeClass } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    {
+      enableGoogleAnalytics && (
+        <>
+          <script
+            is:inline
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-KS98PZS9BN"
+          />
+          <script is:inline>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+              dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+            gtag("config", "G-KS98PZS9BN");
+          </script>
+        </>
+      )
+    }
   </head>
   <body>
     <slot />

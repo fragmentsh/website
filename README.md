@@ -1,6 +1,6 @@
-# fragment.
+# fragment
 
-Standalone static Astro site for `fragment.`.
+Standalone static Astro site for `fragment`.
 
 ## Local Development
 

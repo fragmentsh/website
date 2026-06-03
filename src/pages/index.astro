@@ -17,11 +17,11 @@ const nav = [
 const portfolio = [
   {
     index: "01",
-    name: "shard labs.",
+    name: "shard labs",
     description:
       "shard labs builds focused experiments at the edge of blockchain, AI, automation, and technical infrastructure.",
     href: "https://shard-labs.xyz",
-    label: "visit shard labs.",
+    label: "visit shard labs",
   },
   {
     index: "02",
@@ -34,7 +34,7 @@ const portfolio = [
 ---
 
 <Layout
-  title="fragment. | quiet capital"
+  title="fragment | quiet capital"
   description="fragment is a small investment firm backing focused companies with long-term intent."
   themeClass={fragmentBrand.themeClass}
 >
@@ -44,14 +44,14 @@ const portfolio = [
     <Header logoPath={fragmentBrand.logoPath} brandName={fragmentBrand.name} nav={nav} contactHref="#contact" />
     <main>
       <Hero
-        headline="Quiet capital."
+        headline="Quiet capital"
         copy="fragment is a small investment firm backing focused companies with long-term intent."
         primaryLabel="View portfolio"
         primaryHref="#portfolio"
         secondaryLabel="Contact"
         secondaryHref={`mailto:${fragmentBrand.contactEmail}`}
       />
-      <Section id="portfolio" label="portfolio" heading="Companies within fragment.">
+      <Section id="portfolio" label="portfolio" heading="Companies within fragment">
         <div class="portfolio-list">
           {
             portfolio.map((company) => (
