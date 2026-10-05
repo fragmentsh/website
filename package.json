@@ -13,7 +13,7 @@
     "@tailwindcss/vite": "^4.3.3",
     "astro": "^6.4.8",
     "tailwindcss": "^4.3.3",
-    "typescript": "^5.9.3"
+    "typescript": "^7.0.2"
   },
   "packageManager": "bun@1.4.2"
 }
